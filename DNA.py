@@ -59,7 +59,7 @@ try:
         if rowIndex == 0 or rowIndex == 9:
             final_row = row_template.replace('#', COLORS['BACKBONE'] + '#' + COLORS['RESET'])
         else:
-            # Select random nucleotide pairs
+            # Select random DNA pairs
             randomSelection = random.randint(1, 4)
             if randomSelection == 1:
                 n1, n2 = 'A', 'T'
@@ -70,11 +70,11 @@ try:
             elif randomSelection == 4:
                 n1, n2 = 'G', 'C'
             
-            # Create colored nucleotide strings
+            # Create colored DNA strings
             leftN_colored = COLORS[n1] + n1 + COLORS['RESET']
             rightN_colored = COLORS[n2] + n2 + COLORS['RESET']
             
-            # Format the row with colored nucleotides
+            # Format the row with colored DNA
             formatted_row = row_template.format(leftN_colored, rightN_colored)
             
             # Color the backbone
@@ -86,4 +86,5 @@ try:
 
 except KeyboardInterrupt:
     print("\nDNA Animation stopped.")
+
     sys.exit()  
